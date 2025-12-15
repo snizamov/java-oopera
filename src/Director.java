@@ -12,7 +12,7 @@ public class Director extends Person {
 
     @Override
     public String toString() {
-        String result = "Режиссер данного спектакля - многоуважаемый " + surname + " " + name;
+        String result = "Режиссер данного спектакля - многоуважаемый " + super.toString();
         return result;
     }
 

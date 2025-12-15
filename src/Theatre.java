@@ -8,6 +8,8 @@ public class Theatre {
         Actor actor1 = new Actor("Сергей", "Иванов", Gender.MALE, 170);
         Actor actor2 = new Actor("Иван", "Галиев", Gender.MALE, 180);
         Actor actor3 = new Actor("Елена", "Высоцкая", Gender.FEMALE, 200);
+        //добавлен новый актер для проверки одинаковых фамилий
+        Actor actor4 = new Actor("Мария", "Высоцкая", Gender.FEMALE, 160);
         Director director1 = new Director("Константин", "Хабенский", Gender.MALE, 1);
         Director director2 = new Director("Федор", "Бондарчук", Gender.MALE, 1);
         Person musicAuthor = new Person("Игорь", "Ибрагимов", Gender.MALE);
@@ -30,6 +32,7 @@ public class Theatre {
         opera.addNewActor(actor2);
         ballet.addNewActor(actor1);
         ballet.addNewActor(actor3);
+        ballet.addNewActor(actor4); //проверка одинаковых фамилий
 
         usualPerfomance.printListOfActors();
         opera.printListOfActors();
@@ -42,6 +45,9 @@ public class Theatre {
 
         opera.printLibrettoText();
         ballet.printLibrettoText();
+
+        ballet.changeActor(actor1, actor3.surname); //проверка одинаковых фамилий
+        ballet.printDirectorInfo(); //проверка вывода информации о режиссере
 
     }
 }

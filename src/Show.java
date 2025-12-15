@@ -14,7 +14,7 @@ public class Show {
     }
 
     public void printListOfActors() {
-        System.out.println("Актеры спектакля " + title + ":" );
+        System.out.println("Актеры спектакля " + title + ":");
         for (Actor actor : listOfActors) {
             System.out.println(actor);
         }
@@ -30,7 +30,19 @@ public class Show {
         }
     }
 
-    public void changeActor (Actor newActor, String surname) {
+    public void changeActor(Actor newActor, String surname) {
+        int count = 0;
+        for (Actor a : listOfActors) {
+            if (a.getSurname().equals(surname)) {
+                count++;
+            }
+        }
+        if (count > 1) {
+            System.out.println("Замена невозможна, так как кандидатов с фамилией " + surname + " больше, чем ожидалось");
+            System.out.println("---------------------");
+            return;
+        }
+
         for (Actor a : listOfActors) {
             if (a.getSurname().equals(surname)) {
                 a.setName(newActor.name);
@@ -41,10 +53,12 @@ public class Show {
                 return;
             }
         }
-        System.out.println("Актера с фамилией " + surname +  " нет в списке спектакля " + title);
+        System.out.println("Актера с фамилией " + surname + " нет в списке спектакля " + title);
         System.out.println("---------------------");
+    }
 
-
+    public void printDirectorInfo() {
+        System.out.println(director);
     }
 
 
